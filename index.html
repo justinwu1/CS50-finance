@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+<table class = "table">
+    <thead class = "thead-light">
+        <tr>
+            <th scope = "col">Symbol</th>
+            <th scope = "col">Name</th>
+            <th scope = "col">Shares</th>
+            <th scope = "col">Price</th>
+            <th scope = "col">Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        {%for result in results%}
+        <tr scope = "row">
+            <td>{{result.symbol}}</td>
+            <td>{{result.name}}</td>
+            <td>{{result.shares}}</td>
+            <td>{{result.price}}</td>
+            <td>{{result.totalPrice}}</td>
+        {%endfor%}
+        </tr>
+        <tr>
+            <td>Cash</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>{{cash}}</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>{{grand_total}}</td>
+        </tr>
+    </tbody>
+</table>
+{% endblock %}

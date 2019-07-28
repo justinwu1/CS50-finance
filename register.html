@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+{% block title %}
+    Register
+{% endblock %}
+<!-- Feature that nees to be done after:
+    Check the database and see if the username already exist
+-->
+{% block main %}
+    <form action="/register" method="post">
+        <!-- Register for User name-->
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="username" placeholder="Username" type="text" id = "username" >
+        </div>
+
+        <!-- Register for Password-->
+        <div class="form-group">
+            <input class="form-control" name="password" placeholder="Password" type="password" id = "password" >
+
+        </div>
+        <!-- Confirmation for password-->
+        <div class="form-group">
+            <input class="form-control" name="confirmation"placeholder = "confirm your password" type="password" id = "confirmation" >
+        </div>
+         <div id = "red">
+
+         </div>
+        <button class="btn btn-primary" type="submit">Register</button>
+    </form>
+<script>
+    var password = document.querySelector("#password");
+    var confirmation = document.querySelector("#confirmation");
+    var red = document.querySelector('#red');
+    //Check confirm password and password
+   /* document.querySelector('form').onsubmit = function(){
+        if(password.value !== confirmation.value ){
+            red.innerHTML = "Password and Confirm password doesn't Match";
+            red.style.margin = "15px";
+            red.style.color = "red";
+            return false;
+        }
+    }
+*/
+</script>
+{% endblock %}
